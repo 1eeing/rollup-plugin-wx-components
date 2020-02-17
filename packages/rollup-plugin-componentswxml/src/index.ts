@@ -1,10 +1,11 @@
-import { createFilter } from 'rollup-pluginutils';
 import transformAlipay from './platform/alipay';
+
+const { writeFileSync, readFileSync } = require('fs');
 
 type Platform = 'alipay';
 
 const switchPlatform = (platform: Platform) => {
-  const defaultFunc = (code: string) => ({code})
+  const defaultFunc = (code: string) => code;
   const funcmap = {
     alipay: transformAlipay
   }
@@ -12,20 +13,19 @@ const switchPlatform = (platform: Platform) => {
 }
 
 export default function transform(options: {
-  include?: any,
-  exclude?: any,
+  template: string,
+  filename: string,
+  dest: string,
   platform: Platform
-} = {
-  platform: 'alipay'
 }) {
-  const filter = createFilter(options.include, options.exclude);
-
+  const { template, platform, filename, dest } = options
   return {
     name: 'transform-wx-componentswxml',
 
-    transform(code, id) {
-      if (!filter(id)) return null;
-      return switchPlatform(options.platform)(code);
+    writeBundle() {
+      const code = readFileSync(template).toString();
+      const res = switchPlatform(platform)(code);
+      writeFileSync(`${dest}/${filename}`, res);
     },
   };
 }

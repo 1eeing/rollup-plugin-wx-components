@@ -21,6 +21,6 @@ const expectedCode =
 
 describe('test transformWxml', function() {
   it('should be equal', function() {
-    assert.equal(transformWxml(code).code, expectedCode);
+    assert.equal(transformWxml(code), expectedCode);
   })
 })

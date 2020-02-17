@@ -48,10 +48,7 @@ const traverseAst = (ast: any) => {
 const transformWxml = (code: string) => {
   const ast = parse(code);
   const json = traverseAst(ast);
-  return {
-    code: stringify(json),
-    map: '',
-  };
+  return stringify(json)
 }
 
 export default transformWxml
