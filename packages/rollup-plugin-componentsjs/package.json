@@ -1,0 +1,33 @@
+{
+  "name": "rollup-plugin-componentsjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/rollup-plugin-componentsjs.cjs.js",
+  "module": "dist/rollup-plugin-componentsjs.es.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "test": "mocha"
+  },
+  "keywords": [
+    "rollup-plugin"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^7.0.1",
+    "rollup": "^1.31.1",
+    "rollup-plugin-typescript": "^1.0.1",
+    "tslib": "^1.10.0",
+    "typescript": "^3.7.5"
+  },
+  "dependencies": {
+    "@babel/generator": "^7.8.4",
+    "@babel/parser": "^7.8.4",
+    "@babel/traverse": "^7.8.4",
+    "@babel/types": "^7.8.3",
+    "rollup-pluginutils": "^2.8.2"
+  }
+}
