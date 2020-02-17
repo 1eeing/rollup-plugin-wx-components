@@ -2,7 +2,8 @@ import { parse, stringify } from 'himalaya-wxml';
 
 const traverseKey = (key: string) => {
   if(key.startsWith('wx:')){
-    return 'a:';
+    const postfix = key.slice(3);
+    return `a:${postfix}`;
   }
   if(key === 'catchtouchmove'){
     return 'catchTouchMove';
@@ -45,8 +46,8 @@ const traverseAst = (ast: any) => {
 }
 
 const transformWxml = (code: string) => {
-  const ast = JSON.parse(parse(code));
-  const json = JSON.stringify(traverseAst(ast));
+  const ast = parse(code);
+  const json = traverseAst(ast);
   return {
     code: stringify(json),
     map: '',

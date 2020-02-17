@@ -4,10 +4,11 @@ import transformAlipay from './platform/alipay';
 type Platform = 'alipay';
 
 const switchPlatform = (platform: Platform) => {
+  const defaultFunc = (code: string) => ({code})
   const funcmap = {
     alipay: transformAlipay
   }
-  return funcmap[platform];
+  return funcmap[platform] || defaultFunc;
 }
 
 export default function transform(options: {
@@ -24,11 +25,6 @@ export default function transform(options: {
 
     transform(code, id) {
       if (!filter(id)) return null;
-      if(!['alipay'].includes(options.platform)) {
-        this.error('You have not options.platform.');
-        return null;
-      };
-
       return switchPlatform(options.platform)(code);
     },
   };
