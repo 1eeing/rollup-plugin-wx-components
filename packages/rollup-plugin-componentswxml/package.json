@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-componentswxml",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Transform wechat mini app components's wxml",
   "main": "dist/rollup-plugin-componentswxml.cjs.js",
   "module": "dist/rollup-plugin-componentswxml.es.js",

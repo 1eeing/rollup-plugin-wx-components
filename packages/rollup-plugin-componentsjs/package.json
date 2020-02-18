@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-componentsjs",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Transform wechat mini app components's js",
   "main": "dist/rollup-plugin-componentsjs.cjs.js",
   "module": "dist/rollup-plugin-componentsjs.es.js",
