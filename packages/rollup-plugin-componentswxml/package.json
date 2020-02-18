@@ -1,7 +1,7 @@
 {
   "name": "rollup-plugin-componentswxml",
   "version": "0.0.3",
-  "description": "",
+  "description": "Transform wechat mini app components's wxml",
   "main": "dist/rollup-plugin-componentswxml.cjs.js",
   "module": "dist/rollup-plugin-componentswxml.es.js",
   "files": [
@@ -11,10 +11,12 @@
     "build": "rollup -c",
     "test": "mocha --require ts-node/register"
   },
+  "homepage": "https://github.com/1eeing/rollup-plugin-wx-components",
+  "repository": "https://github.com/1eeing/rollup-plugin-wx-components/tree/master/packages/rollup-plugin-componentswxml",
+  "author": "1eeing <372711472@qq.com>",
   "keywords": [
     "rollup-plugin"
   ],
-  "author": "",
   "license": "ISC",
   "devDependencies": {
     "mocha": "^7.0.1",

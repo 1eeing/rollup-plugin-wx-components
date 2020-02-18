@@ -1,5 +1,5 @@
 ## Overview
-这是一款rollup插件，用来编译微信小程序自定义组件为其他平台小程序自定义组件（BATE版本）。
+This is a rollup's plugin, it's used to transform wechat mini app components to other platform mini app components.
 
 ## Achieved List
-- [x] 支付宝小程序
+- [x] Alipay mini app

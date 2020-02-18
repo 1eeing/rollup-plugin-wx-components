@@ -12,8 +12,8 @@ const switchPlatform = (platform: Platform) => {
 }
 
 export default function transform(options: {
-  include?: any,
-  exclude?: any,
+  include?: string | string [],
+  exclude?: string | string [],
   platform: Platform
 } = {
   platform: 'alipay'

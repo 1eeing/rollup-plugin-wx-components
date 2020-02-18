@@ -1,14 +1,14 @@
 import { parse } from '@babel/parser';
-import traverse, { NodePath } from '@babel/traverse';
+import traverse from '@babel/traverse';
 import generate from '@babel/generator';
 import * as t from '@babel/types';
 
 function transformJs(code: string) {
   const ast = parse(code);
-  let pp: NodePath;
+  let pp;
 
   traverse(ast, {
-    enter(path: NodePath) {
+    enter(path) {
       if (t.isIdentifier(path.node, {name: 'attached'})) {
         path.node.name = 'onInit';
       }
@@ -21,7 +21,7 @@ function transformJs(code: string) {
         pp.insertAfter(path.node);
       }
     },
-    exit(path: NodePath) {
+    exit(path) {
       if(t.isIdentifier(path.node.key, {name: 'pageLifetimes'})){
         path.remove();
       }
